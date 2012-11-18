@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# импортируем библиотеку для работы с
-# временем и датой.
+# import libraries for timezone
+# for get a now time
 from django.utils import timezone
-# и функцию, которая посылает HTTP
-# ответ в браузер.
+# and function, which sends a request
+# to web-browser
 from django.http import HttpResponse
 
-# функция index принимает аргумент request
-# из него извлекаются многие нужные данные,
-# например, текущий URL или POST данные
+# def index has an argument named request
+# request contains a few data, which helps
+# us to get an URL or other data.
 def index(request):
-    # теперь просто вернем Response с текстом.
-    return HttpResponse("Сейчас %s" % timezone.now())
+    # now, just return Response with some text
+    return HttpResponse("Now: %s" % timezone.now())

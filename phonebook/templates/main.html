@@ -23,7 +23,9 @@
           <a class="brand" href="{% url home %}">Django PhoneBook Example</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li {% ifequal request.get_full_path "/" %}class="active"{% endifequal %}><a href="{% url home %}">Home</a></li>
+                <li {% ifequal request.get_full_path "/" %}class="active"{% endifequal %}>
+                  <a href="{% url home %}">Home</a>
+                </li>
             </ul>
           </div>
         </div>

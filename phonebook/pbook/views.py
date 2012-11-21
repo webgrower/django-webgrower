@@ -13,7 +13,7 @@ def index(request):
     }, RequestContext(request))
 
 def view_book(request, book_id):
-    book = Book.objects.get(id=book_id)
+    book = get_object_or_404(Book, id=book_id)
     return render_to_response('pbook/view_book.html', {
         'title': book.name,
         'book': book,
@@ -21,7 +21,7 @@ def view_book(request, book_id):
     }, RequestContext(request))
 
 def view_contact(request, contact_id):
-    phone = Phone.objects.get(id=contact_id)
+    phone = get_object_or_404(Phone, id=contact_id)
     return render_to_response('pbook/view_contact.html', {
         'title': phone.first_name + ' ' + phone.last_name,
         'phone': phone,

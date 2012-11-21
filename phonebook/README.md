@@ -1,6 +1,6 @@
 #Django PhoneBook Example
 
-This Example shows you, how to make a simply phone book with Twitter Bootstrap. This example is a part of tutorials in WebGrower repo on GitHub.
+This Example shows you, how to make a simply phone book with Django and Twitter Bootstrap. This example is a part of tutorials in WebGrower repo on GitHub.
 Enjoy!
 
 ## Some notes

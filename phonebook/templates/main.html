@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <meta charset="utf-8">
+    <link href="{% static "css/bootstrap.css" %}" type="text/css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            padding-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="{% url home %}">Django PhoneBook Example</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li {% ifequal request.get_full_path "/" %}class="active"{% endifequal %}><a href="{% url home %}">Home</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="wrap">
+      <div class="container">
+        <div class="page-header">
+          <h1>{{ title }}</h1>
+        </div>
+    {% block content %}
+    {% endblock %}
+    <footer>
+        &copy; ikhrome, 2012
+    </footer>
+    </div>
+    </div>
+</body>
+</html>

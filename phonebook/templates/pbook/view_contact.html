@@ -1,0 +1,16 @@
+{% extends "main.html" %}
+{% block content %}
+<div class="row">
+    <div class="span6 offset4">
+        <h2>{{ phone.first_name }}&nbsp;{{ phone.last_name }}</h2>
+        <p class="lead">{{ phone.phone }}</p>
+        <dl>
+            <dt>Address</dt>
+            <dd>{{ phone.address }}</dd>
+            <dt>Notes</dt>
+            <dd>{{ phone.notes|linebreaks }}</dd>
+        </dl>
+        <a class="btn btn-primary" href="{% url home %}">Home</a>
+    </div>
+</div>
+{% endblock %}

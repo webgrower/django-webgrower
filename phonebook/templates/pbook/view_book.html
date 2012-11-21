@@ -1,0 +1,33 @@
+{% extends "main.html" %}
+{% block content %}
+<p class="lead">Available contacts in &laquo;{{ book }}&raquo;</p>
+<table width="100%" class="table table-bordered">
+    <thead>
+        <tr>
+            <th width="5%">ID</th>
+            <th width="55%">Full name</th>
+            <th width="40%">Phone/Address</th>
+        </tr>
+    </thead>
+    {% if book.phone_set.count != 0 %}
+    <tbody>
+        {% for contact in book.phone_set.all %}
+        <tr>
+            <td>{{ contact.id }}</td>
+            <td>
+                <span class="lead"><a href="{% url contact contact.id %}">
+                    {{ contact.first_name }} {{ contact.last_name }}</a>
+                </span>
+                <p>{{ contact.notes|linebreaks }}</p>
+            </td>
+            <td><span class="lead">{{ contact.phone }}</span>
+            <p>{{ contact.address }}</p></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    {% else %}
+    </table>
+    <p class="lead">There are no contacts found.</p>
+    {% endif %}
+</table>
+{% endblock %}

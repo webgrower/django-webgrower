@@ -1,0 +1,52 @@
+{% extends "main.html" %}
+{% block content %}
+<div class="row">
+    <div class="span3">
+        {% include "menu.html" %}
+    </div>
+    <div class="span9">
+        <table width="100%" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th width="5%">ID</th>
+                    <th width="95%">Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                <tr>
+                    <td>{{ book.id }}</td>
+                    <td><span class="lead"><a href="{% url book book.id %}">{{ book }}</a></span>
+                    <p>{{ book.description|linebreaks }}</p></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="span4">
+        <h3>About</h3>
+        <p>This Example shows you, how to make a simply phone book with
+        Twitter Bootstrap. This demo is a part of tutorials in
+        WebGrower repo on GitHub. Enjoy!</p>
+    </div>
+    <div class="span4">
+        <h3>License</h3>
+        <p>This application hasn't license. You can fork it, change it
+        and I will be happy, because you using it.
+        But, don't forget to put link to our repo on GitHub!</p>
+    </div>
+    <div class="span4">
+        <h3>Technical</h3>
+        <dl class="dl-horizontal">
+            <dt>Author</dt>
+            <dd><a href="http://khromov.net/" target="_blank">ikhrome</a></dd>
+            <dt>Django version</dt>
+            <dd>1.4.2</dd>
+            <dt>GitHub</dt>
+            <dd><a href="https://github.com/webgrower/django-webgrower" target="_blank">django-webgrower</a></dd>
+        </dl>
+    </div>
+</div>
+{% endblock %}
